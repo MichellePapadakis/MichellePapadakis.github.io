@@ -120,27 +120,37 @@ seeking skill, curiosity, and colleagues who dare,
 to ask big questions — and actually care.
     </p>
 
-    <div class="links">
-      <a href="https://github.com/MichellePapadakis">GitHub</a> ·
-      <a href="https://linkedin.com/in/michelle-papadakis">LinkedIn</a> ·
-    </div>
-
 
 <div class="links">
   <a href="https://github.com/MichellePapadakis">GitHub</a> ·
   <a href="https://linkedin.com/in/michelle-papadakis">LinkedIn</a> ·
 </div>
 
-<!-- Aquí agregas el botón para ver el CV -->
+<!-- Botón para mostrar el CV -->
 <p style="text-align:center; margin-top:30px;">
-  <a href="#cv" class="cv-button">My CV</a>
+  <a href="#!" class="cv-button" onclick="toggleCV()">Ver mi CV</a>
 </p>
 
-<!-- Y aquí el bloque que muestra el PDF embebido -->
-<div id="cv" style="background:#fff; padding:20px; border-radius:12px; box-shadow:0 4px 15px rgba(0,0,0,0.1); margin-top:40px;">
-  <iframe src="CV_2025.pdf" width="100%" height="800px" style="border:none;"></iframe>
+<!-- Bloque del CV oculto al inicio -->
+<div id="cv-section" style="display:none; text-align:center; margin-top:40px;">
+  <div style="background:#fff; padding:20px; border-radius:12px; box-shadow:0 4px 15px rgba(0,0,0,0.1);">
+    <iframe src="CV_2025.pdf" width="100%" height="800px" style="border:none;"></iframe>
+  </div>
 </div>
-    
+
+<!-- Script para mostrar/ocultar -->
+<script>
+  function toggleCV() {
+    const cv = document.getElementById('cv-section');
+    if (cv.style.display === "none") {
+      cv.style.display = "block";
+      window.location.hash = "#cv-section"; // hace scroll automático hacia el CV
+    } else {
+      cv.style.display = "none";
+    }
+  }
+</script>
+
 
   </div>
 </body>
